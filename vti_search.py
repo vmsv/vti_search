@@ -8,6 +8,7 @@
 # CHANGE LOG:
 # 220630 - Added support for reading VT key from environment variable VT_API_KEY
 #        - This is now the default behavior all others are fallback.
+#        - ADDED: Dockerfile
 import sys 
 import argparse
 import os

@@ -91,7 +91,7 @@ class Auxiliary():
         """
 
         try:
-            api_key =  os.getenv["VT_API_KEY"]
+            api_key =  os.getenv("VT_API_KEY")
         except KeyError:
              api_key = keyring.get_password('virustotal', 'api_key')
              
