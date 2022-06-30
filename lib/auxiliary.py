@@ -6,6 +6,7 @@ import os.path
 import keyring
 from datetime import datetime
 import logging
+import os
 LOGGING_FORMAT = "[%(levelname)s]\t%(asctime)s - %(message)s"
 
 
@@ -89,7 +90,11 @@ class Auxiliary():
             :return: The API key as a string
         """
 
-        api_key = keyring.get_password('virustotal', 'api_key')
+        try:
+            api_key =  os.getenv["VT_API_KEY"]
+        except KeyError:
+             api_key = keyring.get_password('virustotal', 'api_key')
+             
         message = ""
         if api_key is None:
             message = "VirusTotal API key is not yet stored in the system keyring."

@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 
+# Notes from VMSV
+# This was forked from the original writer. Most of the code is still 
+# the original one. All my changes will be documented in the change log here
+
+# CHANGE LOG:
+# 220630 - Added support for reading VT key from environment variable VT_API_KEY
+#        - This is now the default behavior all others are fallback.
+
+
 import vt
 import sys
 import os.path
@@ -10,6 +19,8 @@ import asyncio
 
 from .artifact import Artifact
 from .sandboxes import Sandbox_Parser
+
+
 
 
 class VirusTotal_Search(Artifact):
