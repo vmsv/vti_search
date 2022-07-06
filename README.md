@@ -1,3 +1,18 @@
+# Change log
+
+
+This was forked from the original writer. Most of the code is still 
+the original one. All my changes will be documented in the change log here
+
+### 220630 - No version change
+* Added support for reading VT key from environment variable VT_API_KEY
+* This is now the default behavior all others are fallback.
+* ADDED: Dockerfile 
+
+### 220706 - Version 0.1.7
+* Added error handling for UnicodeDecoding error on artifact.py
+
+
 # VTISearch - VirusTotal Intelligence Search
 
 *VTISearch* is a small utility for running a VirusTotal Intelligence search query. A query can include powerful search modifiers (listed in the [documentation](https://support.virustotal.com/hc/en-us/articles/360001385897-File-search-modifiers)) that permit efficient threat research and hunting operations.

@@ -189,12 +189,20 @@ class Artifact():
 
                 string = "{0}{1:28}{2}".format(" " * 2, label + ":", line[:-2])
                 if self.options["verbose"] >= required_verbose_level: print(string)
-                if file_handle is not None: file_handle.write("{0}\n".format(string))
+                try:
+                    if file_handle is not None:  file_handle.write("{0}\n".format(string))
+                except UnicodeError:
+                    str_2 = string.encode('utf-8', 'xmlcharrefreplace')
+                    if file_handle is not None:  file_handle.write("{0}\n".format(str_2))
             else:
                 label = KEYWORD_MAP[value] if value in KEYWORD_MAP else value
                 string = "{0}{1:28}{2}".format(" " * 2, label + ":", getattr(sample, value))
                 if self.options["verbose"] >= required_verbose_level: print(string)
-                if file_handle is not None:  file_handle.write("{0}\n".format(string))
+                try:
+                    if file_handle is not None:  file_handle.write("{0}\n".format(string))
+                except UnicodeError:
+                    str_2 = string.encode('utf-8', 'xmlcharrefreplace')
+                    if file_handle is not None:  file_handle.write("{0}\n".format(str_2))
 
         if self.options["verbose"] >= required_verbose_level:  print("")
         if file_handle is not None: file_handle.write("\n")

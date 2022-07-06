@@ -9,6 +9,7 @@
 # 220630 - Added support for reading VT key from environment variable VT_API_KEY
 #        - This is now the default behavior all others are fallback.
 #        - ADDED: Dockerfile
+# 220706 - Version 0.1.7 - Added error handling for UnicodeDecoding error on artifact.py
 import sys 
 import argparse
 import os
@@ -19,8 +20,8 @@ from lib import auxiliary, vt
 
 meta =      {
                 "title"     :   "VTISearch - VirusTotal Intelligence Search",
-                "note"      :   "Written by Stefan Voemel.",
-                "version"   :   "0.1.6",
+                "note"      :   "Forked and maintained by Vitor Ventura\nOriginally written by Stefan Voemel.",
+                "version"   :   "0.1.7",
             }
 
 
