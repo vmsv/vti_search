@@ -4,6 +4,10 @@
 This was forked from the original writer. Most of the code is still 
 the original one. All my changes will be documented in the change log here
 
+### 230124 - 0.1.8 - Minor tweaks
+* Removed the keyring need
+* Minor fixes
+
 ### 220630 - No version change
 * Added support for reading VT key from environment variable VT_API_KEY
 * This is now the default behavior all others are fallback.
@@ -48,7 +52,6 @@ When using the `--csv` option, results can be exported in CSV format for subsequ
 * Python 3.7+
 * pip3
 * vt-py
-* keyring
 
 ### Notes on Python 3.7 and Ubuntu 18.04
 
@@ -80,17 +83,10 @@ $ sudo apt-get install --reinstall python3-pip
 
 1. Once Python 3.7 is avaialble, you can comfortably install all required packages as follows:
 
-```bash
-$ sudo pip3 install vt-py keyring 
-```
-
-(I am globally installing the packages in this example. Please feel free to set up a virtual environment instead if you prefer.)
-
-
 2. Clone the *VTISearch* repository, and start the program:
 
 ```
-$ git clone https://github.com/svo80/vti_search.git .
+$ git clone https://github.com/vmsv/vti_search.git .
 
 $ cd vti_search && python3 vti_search -h
 ```

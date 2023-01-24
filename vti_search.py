@@ -10,6 +10,7 @@
 #        - This is now the default behavior all others are fallback.
 #        - ADDED: Dockerfile
 # 220706 - Version 0.1.7 - Added error handling for UnicodeDecoding error on artifact.py
+# 230124 - Version 0.1.8 - Minor stuff.
 import sys 
 import argparse
 import os
@@ -21,7 +22,7 @@ from lib import auxiliary, vt
 meta =      {
                 "title"     :   "VTISearch - VirusTotal Intelligence Search",
                 "note"      :   "Forked and maintained by Vitor Ventura\nOriginally written by Stefan Voemel.",
-                "version"   :   "0.1.7",
+                "version"   :   "0.1.8",
             }
 
 
@@ -74,9 +75,7 @@ async def main():
  
     opt.add_argument("-v", "--verbose", action="count", default=0, dest="verbose",
         help="If set, display verbose information about reports.\nUse -vvv to see detailed scan results.")
-    opt.add_argument("-u", "--update-key", action="store_true", dest="update_api_key",
-        help="If set, offers to enter a new API key.")
-    
+
     opt.add_argument("-w", "--workers", type=int, default=5, dest="workers",
         help="Number of concurrent workers.")
    

@@ -89,20 +89,15 @@ class Auxiliary():
         
             :return: The API key as a string
         """
-
+        message = ""
         try:
             api_key =  os.getenv("VT_API_KEY")
         except KeyError:
-             api_key = keyring.get_password('virustotal', 'api_key')
-             
-        message = ""
+            message = "VirusTotal API key is not on the ENV var VT_API_KEY"
+
         if api_key is None:
-            message = "VirusTotal API key is not yet stored in the system keyring."
-        elif self.options["update_api_key"]:
-            message = "The VirusTotal API key was requested to be updated."
-        else:
-            self.log("VirusTotal API key was read from the system keyring.", level = "DEBUG")
-            return api_key
+            message = "VirusTotal API key is not on the ENV var VT_API_KEY"
+        return api_key
 
         self.log("{0}\nPlease note that you must specify an API key that is valid for the (commercial) Private API in order to fully use this program.\n".format(message), level = "WARNING")
         
